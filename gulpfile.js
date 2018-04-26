@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename');
+    util = require('gulp-util');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -62,4 +63,11 @@ gulp.task('default', ['browser-sync'], function(){
   gulp.watch("sass/**/*.scss", ['styles']);
   gulp.watch("js/**/*.js", ['scripts']);
   gulp.watch("*.html", ['bs-reload']);
+  gulp.watch("*.php", ['bs-reload']);
+});
+
+gulp.task('component', function() {
+  gulp.src('template-parts/components/component-template.php')
+    .pipe(rename(util.env.name + '.php'))
+    .pipe(gulp.dest('template-parts/components/'));
 });

@@ -1,0 +1,9 @@
+.ddd-hero-banner {
+  height: 500px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }

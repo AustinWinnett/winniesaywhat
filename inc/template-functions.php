@@ -35,3 +35,16 @@ function desk_dog_development_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'desk_dog_development_pingback_header' );
+
+function ddd_component( $component, $data = array(), $selectors = array() ) {
+	if ( $selectors['classes'] && $selectors['id'] ) {
+		$component_info = 'class="ddd-'. $component . ' ' . $selectors['classes'] . '" id="' . $selectors['id'] . '"';
+	} elseif ( $selectors['classes'] && !$selectors['id'] ) {
+		$component_info = 'class="ddd-'. $component . ' ' . $selectors['classes'] . '"';
+	} elseif ( !$selectors['classes'] && $selectors['id'] ) {
+		$component_info = 'class="ddd-'. $component . '" id="' . $selectors['id'] . '"';
+	} else {
+		$component_info = 'class="ddd-'. $component . '"';
+	}
+	include(locate_template('template-parts/components/' . $component . '.php'));
+}
