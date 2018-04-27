@@ -42,8 +42,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "variables-site/_variables-site.scss";
+@import "mixins/_mixins-master.scss";
 
 /*--------------------------------------------------------------
 # Vendors
@@ -118,4 +118,4 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-@import "components/hero-banner.scss";
+@import "components/_hero-banner.scss";

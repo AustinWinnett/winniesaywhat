@@ -27,3 +27,26 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+/*
+ * Breakpoints
+ */
+
+@mixin screen-xl {
+  @media (max-width: 1400px) { @content; }
+}
+@mixin screen-lg {
+  @media (max-width: 1280px) { @content; }
+}
+@mixin screen-md {
+  @media (max-width: 991px) { @content; }
+}
+@mixin screen-sm {
+  @media (max-width: 768px) { @content; }
+}
+@mixin screen-xs {
+  @media (max-width: 540px) { @content; }
+}
+@mixin screen-xxs {
+  @media (max-width: 480px) { @content; }
+}
