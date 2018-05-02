@@ -121,10 +121,10 @@ add_action( 'widgets_init', 'desk_dog_development_widgets_init' );
  */
 function desk_dog_development_scripts() {
 	wp_enqueue_style( 'desk-dog-development-style', get_template_directory_uri() . '/sass/style.min.css' );
+	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.min.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'desk-dog-development-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'desk-dog-development-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	// wp_enqueue_script( 'desk-dog-development-skip-link-focus-fix', get_template_directory_uri() . '/js//skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -45,7 +45,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('js/**/*.js')
+  return gulp.src('js/scripts/*.js')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
