@@ -48,3 +48,9 @@ function ddd_component( $component, $data = array(), $selectors = array() ) {
 	}
 	include(locate_template('template-parts/components/' . $component . '.php'));
 }
+
+function new_excerpt_more($more) {
+	global $post;
+	return '&hellip;<br /><br /><a href="' . get_permalink() . '" class="btn">Read more</a>';
+}
+add_action('excerpt_more', 'new_excerpt_more');

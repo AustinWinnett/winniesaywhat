@@ -14,20 +14,14 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'desk-dog-development' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'desk-dog-development' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'desk-dog-development' ), 'desk-dog-development', '<a href="https://deskdogdev.com">Desk Dog Development</a>' );
-				?>
-		</div><!-- .site-info -->
+		<div class="container">
+			<a href="<?php echo site_url('/'); ?>" class="footer-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/winnie-logo.png" alt="<?php echo get_bloginfo('name'); ?>"></a>
+			<div class="footer__credits">
+				<p>&copy; 2018 | Website by Desk Dog Development</p>
+			</div> <!-- /.footer__credits -->
+		</div> <!-- /.container -->
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

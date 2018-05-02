@@ -1,0 +1,18 @@
+.site-footer {
+  background-color: $text-dark;
+  color: $white;
+  padding: 4em 0;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+.footer-logo {
+  display: block;
+  margin: 0 auto 1em;
+  max-width: 250px;
+  text-align: center;
+}
+
+.footer__credits {
+  text-align: center;
+  font-size: 0.8em;
+}

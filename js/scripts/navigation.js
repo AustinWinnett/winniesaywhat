@@ -109,6 +109,14 @@
   if ( fixedHeader ) {
     var headerHeight = $('.site-header').outerHeight();
     $('body').css('padding-top', headerHeight);
+
+		if ( $('#wpadminbar') ) {
+			setTimeout(function() {
+				var adminBarHeight = $('#wpadminbar').outerHeight();
+				console.log(adminBarHeight);
+				$('.site-header').css('top', adminBarHeight);
+			}, 500);
+		}
   }
 
 

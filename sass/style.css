@@ -409,6 +409,16 @@ mark, ins {
 big {
   font-size: 125%; }
 
+.large-bold-title {
+  font-size: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; }
+
+a {
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -496,6 +506,19 @@ input[type="submit"] {
   input[type="submit"]:active,
   input[type="submit"]:focus {
     border-color: #aaa #bbb #bbb; }
+
+.btn {
+  position: relative;
+  font-size: 0.8em;
+  padding: 1em 1.5em;
+  border: 1px solid #00DDD4;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #333;
+  overflow: hidden; }
+  .btn:hover {
+    background-color: #00DDD4; }
 
 input[type="text"],
 input[type="email"],
@@ -635,7 +658,8 @@ header.site-header {
   background-color: #FFFFFF;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-  padding: 1em 0; }
+  padding: 1em 0;
+  z-index: 100; }
 
 .navbar-logo img {
   max-width: 100px; }
@@ -673,19 +697,21 @@ header.site-header {
   .menu li a {
     position: relative;
     color: #333;
-    padding-bottom: 0.25em; }
+    padding-bottom: 0.5em; }
     .menu li a::before {
       content: '';
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 1px;
+      height: 3px;
       width: 0;
-      background-color: #333;
+      background-color: #00DDD4;
       -webkit-transition: 0.15s ease-in-out;
       transition: 0.15s ease-in-out; }
     .menu li a:hover::before {
       width: 100%; }
+  .menu li.current_page_item a::before {
+    width: 100%; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -732,52 +758,6 @@ header.site-header {
   outline: 0; }
 
 /*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em; }
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em; }
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-  content: "";
-  display: table;
-  table-layout: fixed; }
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  clear: both; }
-
-/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 .widget {
@@ -820,21 +800,28 @@ header.site-header {
   display: block; }
 
 /*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
-  display: none; }
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-  display: block; }
-
-/*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+.site-footer {
+  background-color: #333;
+  color: #FFFFFF;
+  padding: 4em 0;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75); }
+
+.footer-logo {
+  display: block;
+  margin: 0 auto 1em;
+  max-width: 250px;
+  text-align: center; }
+
+.footer__credits {
+  text-align: center;
+  font-size: 0.8em; }
+
+body {
+  background-color: #ECEFF1; }
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -919,3 +906,50 @@ object {
   background-position: center center;
   text-align: center;
   color: #FFFFFF; }
+
+.ddd-blog-roll {
+  padding: 2em 0; }
+  .ddd-blog-roll .ddd-blog-roll__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .ddd-blog-roll .ddd-blog-roll__roll {
+    padding-right: 1em; }
+  .ddd-blog-roll .ddd-blog-roll__post {
+    background-color: #FFFFFF;
+    padding: 1.5em 1.5em 1.5em;
+    border: 1px solid #b1bec6;
+    margin: 1em 0; }
+  .ddd-blog-roll .ddd-blog-roll__post-title a {
+    color: #333; }
+    .ddd-blog-roll .ddd-blog-roll__post-title a:hover {
+      color: #00DDD4; }
+  .ddd-blog-roll .ddd-blog-roll__post-date {
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; }
+  .ddd-blog-roll .ddd-blog-roll__sidebar {
+    margin-top: 1em;
+    background-color: #FFFFFF;
+    border: 1px solid #b1bec6;
+    padding: 1.5em;
+    min-width: 250px; }
+    .ddd-blog-roll .ddd-blog-roll__sidebar ul {
+      margin-left: 0; }
+      .ddd-blog-roll .ddd-blog-roll__sidebar ul li {
+        list-style: none; }
+        .ddd-blog-roll .ddd-blog-roll__sidebar ul li::before {
+          content: '-';
+          padding-right: 0.25em; }
+    .ddd-blog-roll .ddd-blog-roll__sidebar .widget-title {
+      font-size: 0.8em;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.1em; }

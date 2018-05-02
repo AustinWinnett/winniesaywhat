@@ -12,3 +12,14 @@ textarea {
 @import "headings";
 
 @import "copy";
+
+.large-bold-title {
+	font-size: 3em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+a {
+	transition: 0.15s ease-in-out;
+}
