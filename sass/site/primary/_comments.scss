@@ -4,3 +4,19 @@
 .bypostauthor {
 	display: block;
 }
+.comments-area {
+	margin-top: 1em;
+	background-color: $white;
+	border: 1px solid darken($light-gray, 20%);
+	padding: 1.5em;
+}
+
+.comment-list {
+	margin-left: 0;
+}
+
+.comment-list > .comment {
+	padding-left: 2em;
+	border-left: 3px solid $tertiary-color;
+
+}

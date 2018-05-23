@@ -1,0 +1,29 @@
+.ddd-featured-posts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+
+  .featured-posts__post {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+    margin: 0 2em;
+    height: 400px;
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .featured-posts__post-box {
+    margin: 0 auto;
+    background-color: rgba($black, 0.5);
+    padding: 1em;
+    color: $white;
+    text-align: center;
+  }
+}

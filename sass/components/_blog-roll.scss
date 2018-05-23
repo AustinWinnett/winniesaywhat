@@ -33,31 +33,4 @@
     letter-spacing: 0.1em;
   }
 
-  .ddd-blog-roll__sidebar {
-    margin-top: 1em;
-    background-color: $white;
-    border: 1px solid darken($light-gray, 20%);
-    padding: 1.5em;
-    min-width: 250px;
-
-    ul {
-      margin-left: 0;
-
-      li {
-        list-style: none;
-
-        &::before {
-          content: '-';
-          padding-right: 0.25em;
-        }
-      }
-    }
-
-    .widget-title {
-      font-size: 0.8em;
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 0.1em;
-    }
-  }
 }

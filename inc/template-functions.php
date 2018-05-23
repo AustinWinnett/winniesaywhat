@@ -51,6 +51,11 @@ function ddd_component( $component, $data = array(), $selectors = array() ) {
 
 function new_excerpt_more($more) {
 	global $post;
-	return '&hellip;<br /><br /><a href="' . get_permalink() . '" class="btn">Read more</a>';
+	return '&hellip;<br /><br /><a href="' . get_permalink() . '" class="styled-link">Read More</a>';
 }
 add_action('excerpt_more', 'new_excerpt_more');
+
+function change_excerpt_length( $length ) {
+	return 15;
+}
+add_filter( 'excerpt_length', 'change_excerpt_length', 999 );

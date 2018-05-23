@@ -1,5 +1,94 @@
-$font__main: sans-serif;
+
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway-Bold.eot');
+    src: url('../assets/fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Raleway-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Raleway-Bold.woff') format('woff'),
+        url('../assets/fonts/Raleway-Bold.ttf') format('truetype'),
+        url('../assets/fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway-Italic.eot');
+    src: url('../assets/fonts/Raleway-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Raleway-Italic.woff2') format('woff2'),
+        url('../assets/fonts/Raleway-Italic.woff') format('woff'),
+        url('../assets/fonts/Raleway-Italic.ttf') format('truetype'),
+        url('../assets/fonts/Raleway-Italic.svg#Raleway-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway-Regular.eot');
+    src: url('../assets/fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Raleway-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Raleway-Regular.woff') format('woff'),
+        url('../assets/fonts/Raleway-Regular.ttf') format('truetype'),
+        url('../assets/fonts/Raleway-Regular.svg#Raleway-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neuton';
+    src: url('../assets/fonts/Neuton-Light.eot');
+    src: url('../assets/fonts/Neuton-Light.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Neuton-Light.woff2') format('woff2'),
+        url('../assets/fonts/Neuton-Light.woff') format('woff'),
+        url('../assets/fonts/Neuton-Light.ttf') format('truetype'),
+        url('../assets/fonts/Neuton-Light.svg#Neuton-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neuton';
+    src: url('../assets/fonts/Neuton-Bold.eot');
+    src: url('../assets/fonts/Neuton-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Neuton-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Neuton-Bold.woff') format('woff'),
+        url('../assets/fonts/Neuton-Bold.ttf') format('truetype'),
+        url('../assets/fonts/Neuton-Bold.svg#Neuton-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neuton';
+    src: url('../assets/fonts/Neuton-Regular.eot');
+    src: url('../assets/fonts/Neuton-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Neuton-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Neuton-Regular.woff') format('woff'),
+        url('../assets/fonts/Neuton-Regular.ttf') format('truetype'),
+        url('../assets/fonts/Neuton-Regular.svg#Neuton-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font__main: 'Raleway', 'Arial', sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
+
+%sans-serif,
+.sans-serif {
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+%serif,
+.serif {
+  font-family: 'Neuton', serif;
+  font-weight: 300;
+  font-style: normal;
+  word-spacing: 0.1em;
+}

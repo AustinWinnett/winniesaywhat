@@ -95,8 +95,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Layout
 --------------------------------------------------------------*/
 @import "layout/container";
+@import "layout/header";
 @import "layout/footer";
 @import "layout/body";
+@import "layout/sidebar-content";
 
 /*--------------------------------------------------------------
 # Media
@@ -104,7 +106,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "media/media";
 
 /*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "pages/blog";
+@import "pages/page";
+
+/*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 @import "components/_hero-banner.scss";
 @import "components/_blog-roll.scss";
+@import "components/_featured-posts.scss";

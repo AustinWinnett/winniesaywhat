@@ -1,22 +1,27 @@
-.content-area {
-	float: right;
-	margin: 0 0 0 (-$size__site-sidebar);
-	width: $size__site-main;
-}
 
-.site-main {
-	margin: 0 0 0 $size__site-sidebar;
-}
+.widget-area {
+	min-width: 300px;
 
-.site-content .widget-area {
-	float: left;
-	overflow: hidden;
-	width: $size__site-sidebar;
-}
+	ul {
+		margin-left: 0;
 
-.site-footer {
-	clear: both;
-	width: $size__site-main;
-}
+		li {
+			list-style: none;
 
-@import "no-sidebar";
+			a {
+				display: block;
+				@extend %serif;
+				font-size: 1.428em;
+				color: $text-dark;
+			}
+
+			span {
+				font-size: 0.857em;
+			}
+		}
+	}
+
+	.widget-title {
+		@extend .heading-bar;
+	}
+}

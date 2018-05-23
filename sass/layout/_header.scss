@@ -1,0 +1,55 @@
+.header {
+  position: relative;
+  text-align: center;
+  margin: 5em 0;
+}
+
+.header__logo {
+  color: $text-dark;
+  font-size: 4.285em;
+
+  a {
+    color: $text-dark;
+  }
+}
+
+.navbar-nav {
+  padding: 1em 0;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  li {
+    flex: 0 0 auto;
+    padding: 0;
+    margin-bottom: 0;
+    list-style: none;
+    font-size: 1.142em;
+
+    &::after {
+      content: '/';
+      position: relative;
+      padding: 0 1em;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+
+    a {
+      text-transform: lowercase;
+      position: relative;
+      color: $text-dark;
+    }
+
+    &.current_page_item a {
+      font-weight: bold;
+    }
+  }
+}
