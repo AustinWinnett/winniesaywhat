@@ -18,7 +18,7 @@ $featured_query = new WP_Query( $featured_args );
 
       <div class="featured-posts__post-box">
 
-        <h3 class="featured-posts__post-title"><?php the_title(); ?></h3>
+        <h3 class="featured-posts__post-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
         <p class="featured-posts__post-date"><?php echo get_the_date(); ?></p>
 
       </div> <!-- /.featured-posts__post-box -->

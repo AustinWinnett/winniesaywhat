@@ -56,6 +56,6 @@ function new_excerpt_more($more) {
 add_action('excerpt_more', 'new_excerpt_more');
 
 function change_excerpt_length( $length ) {
-	return 15;
+	return 20;
 }
 add_filter( 'excerpt_length', 'change_excerpt_length', 999 );

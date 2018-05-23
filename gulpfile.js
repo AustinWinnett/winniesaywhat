@@ -45,7 +45,10 @@ gulp.task('styles', function(){
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('js/scripts/*.js')
+  return gulp.src([
+    'vendors/slick/slick.min.js',
+    'js/scripts/*.js'
+  ])
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);

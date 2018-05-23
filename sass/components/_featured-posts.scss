@@ -1,10 +1,7 @@
 .ddd-featured-posts {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  overflow: hidden;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 4em;
+  overflow: hidden;
 
   .featured-posts__post {
     display: flex;
@@ -12,18 +9,46 @@
     position: relative;
     flex: 0 0 auto;
     margin: 0 2em;
-    height: 400px;
-    width: 50%;
+    max-width: 50%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    max-height: 600px;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 60%;
+    }
   }
 
   .featured-posts__post-box {
     margin: 0 auto;
     background-color: rgba($black, 0.5);
-    padding: 1em;
+    padding: 3em 1.5em;
+    width: 70%;
     color: $white;
     text-align: center;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+
+    .featured-posts__post-title {
+      font-size: 2.143em;
+      margin-bottom: 0.5em;
+
+      a {
+        color: $white;
+      }
+    }
+
+    .featured-posts__post-date {
+      font-size: 1.142em;
+    }
+  }
+
+  .slick-current {
+    .featured-posts__post-box {
+      opacity: 1;
+    }
   }
 }

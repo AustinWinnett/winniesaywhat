@@ -32,7 +32,7 @@
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
-    "node-sass": "latest"
+    "node-sass": "^4.9.0"
   },
   "dependencies": {
     "jquery": "^3.3.1",

@@ -49,6 +49,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Vendors
 --------------------------------------------------------------*/
 @import "vendor/milligram.min.css";
+@import "../vendors/slick/slick-theme.scss";
+@import "../vendors/slick/slick.scss";
 
 /*--------------------------------------------------------------
 # Normalize
