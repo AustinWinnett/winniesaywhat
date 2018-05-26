@@ -59,3 +59,7 @@ function change_excerpt_length( $length ) {
 	return 20;
 }
 add_filter( 'excerpt_length', 'change_excerpt_length', 999 );
+
+function format_comment() {
+	include(locate_template('template-parts/modules/comment.php'));
+}

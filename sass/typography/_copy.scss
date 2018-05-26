@@ -1,5 +1,5 @@
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 0.5em;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -11,7 +11,12 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 2em 0;
+	border: 0;
+	box-shadow: 0px 1px 6px 0px rgba($black, 0.4);
+	padding: 1.5em;
+	@extend %serif;
+	font-size: 1.429em;
 }
 
 address {

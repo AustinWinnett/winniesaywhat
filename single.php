@@ -11,6 +11,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+
 		<main id="main" class="site-main">
 
 			<div class="container">
@@ -23,7 +24,7 @@ get_header();
 						while ( have_posts() ) :
 							the_post();
 
-							get_template_part( 'template-parts/content-post', get_post_type() );
+							get_template_part( 'template-parts/content', 'post' );
 
 							// If comments are open or we have at least one comment, load up the comment template.
 							if ( comments_open() || get_comments_number() ) :
@@ -33,22 +34,14 @@ get_header();
 						endwhile; // End of the loop.
 						?>
 
-					</div>
+					</div> <!-- /.post__post -->
 
+				</div> <!-- /.post__page -->
 
-
-					<?php get_sidebar(); ?>
-
-
-				</div>
-
-
-
-			</div>
-
-
+			</div> <!-- /.container -->
 
 		</main><!-- #main -->
+
 	</div><!-- #primary -->
 
 <?php

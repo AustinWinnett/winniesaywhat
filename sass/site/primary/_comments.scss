@@ -5,18 +5,38 @@
 	display: block;
 }
 .comments-area {
-	margin-top: 1em;
-	background-color: $white;
-	border: 1px solid darken($light-gray, 20%);
-	padding: 1.5em;
+	margin-left: 350px;
 }
 
 .comment-list {
 	margin-left: 0;
+	list-style: none;
 }
 
 .comment-list > .comment {
-	padding-left: 2em;
-	border-left: 3px solid $tertiary-color;
+	border: 0;
+	box-shadow: 0px 1px 6px 0px rgba($black, 0.4);
+	padding: 1.5em;
 
+	.comment-content {
+		margin: 1em 0 1em 36px;
+	}
+
+	.comment-metadata {
+		margin-left: 36px;
+
+		a {
+			color: $text-dark;
+		}
+	}
+
+	.reply {
+		margin-left: 36px;
+	}
+
+}
+
+.comments-title,
+.comment-reply-title {
+	font-size: 2.429em;
 }

@@ -7,48 +7,63 @@
  * @package Desk_Dog_Development
  */
 
+
+$image = wp_get_attachment_image_url(get_post_thumbnail_id(), 'Full');
+
 ?>
 
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<p class="small-bold-title"><?php the_date(); ?></p>
-	</header><!-- .entry-header -->
 
-	<?php desk_dog_development_post_thumbnail(); ?>
+	<?php if ( $image ): ?>
 
-	<div class="entry-content">
-		<?php
-		the_content();
+		<img src="<?php echo $image; ?>" alt="<?php echo get_the_title(); ?>" class="post__image">
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'desk-dog-development' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'desk-dog-development' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+
+	<header class="post__header">
+
+		<?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
+
+		<p class="post__date"><?php echo get_the_date(); ?></p>
+
+		<div class="post__author">
+
+			<p class="post__author-title">Written by Austin</p>
+
+			<div class="post__author-image" style="background-image: url('https://unsplash.it/500/800')"></div>
+
+		</div>
+
+	</header><!-- .post__header -->
+
+	<div class="post__content">
+
+		<?php the_content(); ?>
+
+		<?php if ( get_edit_post_link() ) : ?>
+			<footer class="entry-footer">
+				<?php
+				edit_post_link(
+					sprintf(
+						wp_kses(
+							/* translators: %s: Name of current post. Only visible to screen readers */
+							__( 'Edit <span class="screen-reader-text">%s</span>', 'desk-dog-development' ),
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
+						),
+						get_the_title()
+					),
+					'<span class="edit-link">',
+					'</span>'
+				);
+				?>
+			</footer><!-- .entry-footer -->
+		<?php endif; ?>
+
+	</div>
+
+
 </article><!-- #post-<?php the_ID(); ?> -->
