@@ -35,6 +35,12 @@
     arrows: false
   });
 
+  $('.blog__author-image').click(function() {
+    var author = $(this).data('author');
+    $('input[name="blog-filter"][value="' + author + '"]').trigger('click');
+    $(this).toggleClass('checked');
+  });
+
 })(jQuery);
 
 /**

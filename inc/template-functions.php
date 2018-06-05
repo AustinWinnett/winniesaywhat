@@ -63,3 +63,17 @@ add_filter( 'excerpt_length', 'change_excerpt_length', 999 );
 function format_comment() {
 	include(locate_template('template-parts/modules/comment.php'));
 }
+
+function university_adjust_queries($query){
+   if ( ! is_admin() && $query->is_main_query() ) {
+      $query->set( 'author__in', array(1,2) );
+			$query->set( 'date_query', array(
+	      array(
+		        'month' => '5'
+		      )
+		    )
+			);
+
+   }
+}
+add_action( 'pre_get_posts', 'university_adjust_queries' );

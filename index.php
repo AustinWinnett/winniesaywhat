@@ -13,47 +13,91 @@
  */
 
 get_header();
+
+$args = array();
+
+// The Query
+$user_query = get_users();
+
 ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
+			<div class="container">
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+				<h2 class="heading-bar heading-bar--center">Filters</h2>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<div class="blog__authors-wrapper">
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+					<?php if (! empty( $user_query ) ) : foreach ( $user_query as $user ) : ?>
+						<?php $user_data = $user->data; ?>
 
-			endwhile;
+						<div class="blog__author">
 
-			the_posts_navigation();
+							<div class="blog__author-image" style="background-image: url(<?php echo get_avatar_url($user->ID); ?>);" data-author="<?php echo $user_data->display_name; ?>"></div>
 
-		else :
+							<h3 class="h2 blog__author-name"><?php echo $user_data->display_name; ?><h3>
 
-			get_template_part( 'template-parts/content', 'none' );
+							<input type="checkbox" name="blog-filter" value="<?php echo $user_data->display_name; ?>">
 
-		endif;
-		?>
+						</div> <!-- /.blog__author -->
+
+					<?php endforeach; endif; ?>
+
+				</div> <!-- /.blog__authors-wrapper -->
+
+				<div class="blog__date-filter">
+
+					<label class="heading-font blog__date-filter__title" for="Date Filter">Select a Date</label>
+
+					<select class="blog__date-filter__box" name="Date Filter">
+						<option value="January 2018">January 2018</option>
+						<option value="February 2018">February 2018</option>
+					</select>
+
+				</div>
+
+				<div class="page__wrapper">
+
+					<div class="page__content">
+
+						<h2 class="heading-bar">Posts</h2>
+
+						<?php
+						if ( have_posts() ) :
+
+							/* Start the Loop */
+							while ( have_posts() ) :
+								the_post();
+
+								/*
+								 * Include the Post-Type-specific template for the content.
+								 * If you want to override this in a child theme, then include a file
+								 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+								 */
+								get_template_part( 'template-parts/content', 'entry' );
+
+							endwhile;
+
+							the_posts_navigation();
+
+						else :
+
+							get_template_part( 'template-parts/content', 'none' );
+
+						endif;
+						?>
+
+					</div> <!-- /.page__content -->
+
+					<?php get_sidebar(); ?>
+
+				</div> <!-- /.page__wrapper -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

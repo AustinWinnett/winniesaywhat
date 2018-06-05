@@ -30,4 +30,13 @@ h6 {
 		border-right: 5px solid transparent;
 		border-top: 8px solid $text-dark;
 	}
+
+	&.heading-bar--center {
+		text-align: center;
+
+		&::after {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
 }

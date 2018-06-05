@@ -28,13 +28,13 @@ $image = wp_get_attachment_image_url(get_post_thumbnail_id(), 'Full');
 
 		<div class="post__author">
 
-			<p class="post__author-title">Written by Austin</p>
+			<p class="post__author-title">Written by <?php echo get_the_author_posts_link(); ?></p>
 
-			<div class="post__author-image" style="background-image: url('https://unsplash.it/500/800')"></div>
+			<div class="post__author-image" style="background-image: url('<?php echo get_avatar_url(get_the_author_ID()); ?>')"></div>
 
-		</div>
+		</div> <!-- /.post__author -->
 
-	</header><!-- .post__header -->
+	</header><!-- /.post__header -->
 
 	<div class="post__content">
 
@@ -63,7 +63,6 @@ $image = wp_get_attachment_image_url(get_post_thumbnail_id(), 'Full');
 			</footer><!-- .entry-footer -->
 		<?php endif; ?>
 
-	</div>
-
+	</div> <!-- /.post__content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
