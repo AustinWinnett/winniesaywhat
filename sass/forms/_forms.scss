@@ -1,3 +1,119 @@
-@import "buttons";
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $color__border-button;
+	border-radius: 3px;
+	background: $color__background-button;
+	color: rgba(0, 0, 0, .8);
+	@include font-size(0.75);
+	line-height: 1;
+	padding: .6em 1em .4em;
 
-@import "fields";
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+}
+
+.btn {
+	position: relative;
+	font-size: 0.8em;
+	padding: 1em 1.5em;
+	border: 1px solid $gray;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: $text-dark;
+	overflow: hidden;
+
+	&:hover {
+		background-color: $gray;
+		color: $white;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: $text-dark;
+	border: 1px solid $text-dark;
+	border-radius: 0;
+	padding: 3px;
+
+	&:focus {
+		color: $text-dark;
+    border: 1px solid $text-dark;
+	}
+}
+
+select {
+	border: 1px solid $color__border-input;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*
+ * Ninja forms
+ */
+
+.nf-form-fields-required {
+  margin: 1em 0;
+}
+
+.label-above .nf-field-label {
+  margin-bottom: 0.5em !important;
+}
+
+.nf-field-label label {
+  @extend %serif;
+  font-weight: normal !important;
+}
+
+.ninja-forms-field[type="button"],
+.ninja-forms-field[type="button"][disabled] {
+  @extend %serif;
+  font-size: 1.1em;
+  text-transform: capitalize;
+  background-color: $text-dark;
+  color: $white;
+  padding: 0.5em 1.5em 0.7em;
+  display: inline-block;
+  border: 1px solid $text-dark;
+  border-radius: 0;
+  transition: 0.15s ease-in-out;
+
+  &:hover {
+    color: $text-dark;
+    background-color: $white;
+    border: 1px solid $text-dark;
+  }
+}
+
+.nf-response-msg {
+  display: block;
+  margin: 1em 0;
+  border: 1px solid #4bb543;
+  padding: 1em;
+  background-color: lighten(#4bb543, 45%);
+}

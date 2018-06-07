@@ -23,7 +23,7 @@ ddd_component(
 
   <div class="page__wrapper">
 
-    <div class="page__content">
+    <div class="page__content blog-roll">
 
       <h1 class="heading-bar">Recent Posts</h2>
 

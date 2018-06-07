@@ -6,6 +6,16 @@
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.4);
   margin-bottom: 2em;
 
+  @include screen-sm {
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .entry__image {
     flex: 0 0 auto;
     position: relative;
@@ -13,6 +23,23 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+    @include screen-sm {
+      width: 100%;
+
+      &::after {
+        content: '';
+        display: block;
+        padding-top: 60%;
+      }
+    }
+
+    @include screen-xs {
+
+      &::after {
+        padding-top: 100%;
+      }
+    }
   }
 
   .entry__content {
@@ -74,9 +101,19 @@ article.post {
   min-width: 350px;
   padding-right: 2em;
 
+  @include screen-md {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: auto;
+  }
+
   .post__title {
     font-size: 2.429em;
     margin-top: 0;
+
+    @include screen-xs {
+      font-size: 2em;
+    }
   }
 
   .post__date {
@@ -96,6 +133,10 @@ article.post {
     background-position: center center;
     box-shadow: 0px 3px 6px 0px rgba($black, 0.4);
 
+    @include screen-md {
+      display: none;
+    }
+
     &::after {
       content: '';
       display: block;
@@ -108,6 +149,10 @@ article.post {
   flex: 0 0 auto;
   width: calc(100% - 350px);
   margin-top: 0.5em;
+
+  @include screen-md {
+    width: 100%;
+  }
 }
 
 /*
@@ -119,6 +164,7 @@ article.post {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 2em;
 
   input[type="checkbox"] {
     display: none;
@@ -128,6 +174,14 @@ article.post {
     flex: 0 0 auto;
     text-align: center;
     margin: 0 2.5em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .blog__author-image {
@@ -145,18 +199,31 @@ article.post {
     cursor: pointer;
     transition: 0.25s ease-in-out;
 
+    @include screen-xs {
+      width: 80px;
+    }
+
     &::before {
       content: '';
-      display: block;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
+      height: 75px;
+      width: 75px;
+      background-image: url('/wp-content/themes/winniesaywhat/assets/img/checkmark.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
       border-radius: 50%;
-      border: 3px solid transparent;
+      opacity: 0;
+      z-index: 10;
       transition: 0.25s ease-in-out;
+
+      @include screen-xs {
+        height: 45px;
+        width: 45px;
+      }
     }
 
     &::after {
@@ -164,6 +231,7 @@ article.post {
       display: block;
       padding-top: 100%;
       background-color: rgba($black, 1);
+      border-radius: 50%;
       opacity: 0;
       transition: 0.25s ease-in-out;
     }
@@ -178,13 +246,17 @@ article.post {
       box-shadow: none;
 
       &::before {
-        border: 3px solid transparent;
+        opacity: 1;
       }
 
       &::after {
         opacity: 0.5;
       }
     }
+  }
+
+  .blog__author-name {
+    font-size: 1.142em;
   }
 }
 
@@ -195,6 +267,7 @@ article.post {
 
   .blog__date-filter__title {
     margin-bottom: 0.25em;
+    font-size: 1.142em;
   }
 
   select {
@@ -202,7 +275,30 @@ article.post {
     border-radius: 0;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="#333333" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>');
 
-    &:focus {
-    }
   }
+}
+
+.nav-links a {
+  @extend %serif;
+  font-size: 1.1em;
+  text-transform: capitalize;
+  background-color: $text-dark;
+  color: $white;
+  padding: 0.5em 1em 0.7em;
+  display: inline-block;
+  border: 1px solid $text-dark;
+  transition: 0.15s ease-in-out;
+
+  &:hover {
+    color: $text-dark;
+    background-color: $white;
+  }
+}
+
+.nav-previous a::before {
+  content: '< ';
+}
+
+.nav-next a::after {
+  content: ' >';
 }

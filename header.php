@@ -21,23 +21,31 @@
 </head>
 
 <body <?php body_class(); ?>>
+	
 <div id="page" class="site">
-
-	<?php // get_template_part( 'layouts/navbar' ); ?>
 
 	<header class="header">
 
 		<div class="container">
 
-			<h2><a href="<?php echo site_url('/'); ?>" class="header__logo">Winnie Say What</a></h2>
+			<div class="header-logo__wrapper">
 
-		</div>
+				<h2 class="header__logo"><a href="<?php echo site_url('/'); ?>">Winnie Say What</a></h2>
+
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="line"></span>
+					<span class="line"></span>
+					<span class="line"></span>
+				</button>
+
+			</div> <!-- /.header-logo__wrapper -->
+
+		</div> <!-- /.container -->
 
 		<nav id="site-navigation" class="navbar-nav column" >
 
 			<div class="container">
 
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'desk-dog-development' ); ?></button>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
@@ -45,7 +53,7 @@
 				) );
 				?>
 
-			</div>
+			</div> <!-- /.container -->
 
 		</nav><!-- #site-navigation -->
 

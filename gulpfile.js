@@ -47,6 +47,7 @@ gulp.task('styles', function(){
 gulp.task('scripts', function(){
   return gulp.src([
     'vendors/slick/slick.min.js',
+    'vendors/magnific-popup/jquery.magnific-popup.min.js',
     'js/scripts/*.js'
   ])
     .pipe(plumber({
@@ -64,7 +65,7 @@ gulp.task('scripts', function(){
 
 gulp.task('default', ['browser-sync'], function(){
   gulp.watch("sass/**/*.scss", ['styles']);
-  gulp.watch("js/**/*.js", ['scripts']);
+  gulp.watch("js/scripts/*.js", ['scripts']);
   gulp.watch("*.html", ['bs-reload']);
   gulp.watch("*.php", ['bs-reload']);
 });

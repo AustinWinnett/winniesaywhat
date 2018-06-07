@@ -3,12 +3,25 @@
   justify-content: space-between;
   align-items: flex-start;
 
+  @include screen-md {
+    flex-wrap: wrap;
+  }
+
   .page__content {
     flex: 1 1 auto;
     padding-right: 5em;
+    margin-bottom: 2em;
+
+    @include screen-md {
+      padding-right: 0;
+    }
   }
 
   .widget-area {
     flex: 0 0 0;
+
+    @include screen-md {
+      flex: 0 0 auto;
+    }
   }
 }

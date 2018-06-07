@@ -33,13 +33,22 @@ $user_query = get_users();
 					<?php if (! empty( $user_query ) ) : foreach ( $user_query as $user ) : ?>
 						<?php $user_data = $user->data; ?>
 
+						<?php
+							$author_array = explode(' ', $_GET['author']);
+							if ( in_array($user_data->ID, $author_array) ) {
+								$author_checked = 'checked';
+							} else {
+								$author_checked = '';
+							}
+						?>
+
 						<div class="blog__author">
 
-							<div class="blog__author-image" style="background-image: url(<?php echo get_avatar_url($user->ID); ?>);" data-author="<?php echo $user_data->display_name; ?>"></div>
+							<div class="blog__author-image <?php echo $author_checked; ?>" style="background-image: url(<?php echo get_avatar_url($user->ID); ?>);" data-author="<?php echo $user_data->ID; ?>"></div>
 
-							<h3 class="h2 blog__author-name"><?php echo $user_data->display_name; ?><h3>
+							<label class="serif blog__author-name"><?php echo $user_data->display_name; ?><label>
 
-							<input type="checkbox" name="blog-filter" value="<?php echo $user_data->display_name; ?>">
+							<input type="checkbox" name="blog-filter" value="<?php echo $user_data->ID; ?>" <?php echo $author_checked; ?>>
 
 						</div> <!-- /.blog__author -->
 
@@ -49,14 +58,27 @@ $user_query = get_users();
 
 				<div class="blog__date-filter">
 
-					<label class="heading-font blog__date-filter__title" for="Date Filter">Select a Date</label>
+					<label class="serif blog__date-filter__title" for="date-filter">Select a Date</label>
 
-					<select class="blog__date-filter__box" name="Date Filter">
-						<option value="January 2018">January 2018</option>
-						<option value="February 2018">February 2018</option>
+					<select class="blog__date-filter__box" name="date-filter">
+						<option>Select a Date</option>
+						<?php foreach ( ddd_get_archives() as $key => $date ) : ?>
+							<?php
+								if ( $_GET['month'] ) {
+									if ( $_GET['month'] == $date['month'] && $_GET['year'] == $date['year'] ) {
+										$selected_month = 'selected';
+									} else {
+										$selected_month = '';
+									}
+								} else if ( date('Y') == $date['month'] && date('j') == $date['year'] ) {
+									$selected_month = 'selected';
+								}
+							?>
+							<option value="<?php echo $date['month']; ?> <?php echo $date['year']; ?>" data-month="<?php echo $date['month']; ?>" data-year="<?php echo $date['year']; ?>" <?php echo $selected_month; ?>><?php echo $date['month_name'] . ' ' . $date['year'];  ?> </option>
+						<?php endforeach; ?>
 					</select>
 
-				</div>
+				</div> <!-- /.blog__date-filter -->
 
 				<div class="page__wrapper">
 

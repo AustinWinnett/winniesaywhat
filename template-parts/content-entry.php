@@ -2,7 +2,7 @@
 
   <?php if ( get_post_thumbnail_id() ) : ?>
 
-    <div class="entry__image" style="background-image: url(<?php echo wp_get_attachment_image_url(get_post_thumbnail_id(), 'medium'); ?>)">
+    <div class="entry__image" style="background-image: url(<?php echo wp_get_attachment_image_url(get_post_thumbnail_id(), 'medium_large'); ?>)">
 
       <a href="<?php echo get_permalink(); ?>" class="overlay-link"></a>
 
