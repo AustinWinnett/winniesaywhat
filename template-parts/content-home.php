@@ -13,9 +13,7 @@
 ddd_component(
   'featured-posts',
 
-  array(
-    'text'  => 'hello'
-  )
+  array()
 )
 ?>
 

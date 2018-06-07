@@ -3,7 +3,13 @@
 $featured_args = array(
   'post_type'  => 'post',
   'post_status'  => 'publish',
-  'post__in'  => array(9, 21, 25)
+  'meta_query' => array(
+		array(
+			'key'     => 'featured_post',
+			'value'   => true,
+			'compare' => 'EQUALS',
+		),
+	),
 );
 
 $featured_query = new WP_Query( $featured_args );
