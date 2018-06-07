@@ -86,13 +86,18 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: normal;
   font-style: normal; }
 
-body,
+body, h5,
+.h6, h6,
 .sans-serif {
   font-family: 'Raleway', 'Arial', sans-serif;
   font-weight: normal;
   font-style: normal; }
 
-h1, h2, h3, h4, h5, h6, blockquote, .styled-link, .nf-field-label label, .ninja-forms-field[type="button"],
+h1,
+.h1, h2,
+.h2, h3,
+.h3, h4,
+.h4, blockquote, .styled-link, .nf-field-label label, .ninja-forms-field[type="button"],
 .ninja-forms-field[type="button"][disabled], .widget-area ul li a, .nav-links a,
 .serif {
   font-family: 'Neuton', serif;
@@ -629,6 +634,31 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5, h6 {
   font-size: initial;
   font-weight: 300; }
+
+h1,
+.h1 {
+  font-size: 2.571em;
+  margin: 0.25em 0; }
+
+h2,
+.h2 {
+  font-size: 2em; }
+
+h3,
+.h3 {
+  font-size: 1.428em; }
+
+h4,
+.h4 {
+  font-size: 1.2em; }
+
+h5,
+.h6 {
+  font-size: 1.5em; }
+
+h6,
+.h6 {
+  font-size: 1.2em; }
 
 .heading-bar, .widget-area .widget-title {
   position: relative;
