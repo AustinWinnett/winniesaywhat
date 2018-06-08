@@ -148,11 +148,32 @@ article.post {
 .post__content {
   flex: 0 0 auto;
   width: calc(100% - 350px);
-  margin-top: 0.5em;
 
   @include screen-md {
     width: 100%;
   }
+
+  >*:first-child  {
+    margin-top: 0;
+  }
+}
+
+.post__gallery-image {
+  margin-right: 0.5em;
+
+  figcaption {
+    display: none;
+  }
+}
+
+.post__content .wp-caption {
+  figcaption {
+    display: none;
+  }
+}
+
+.flickr-embed-photo {
+  background-color: transparent;
 }
 
 /*

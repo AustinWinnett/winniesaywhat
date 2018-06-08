@@ -11,18 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php desk_dog_development_post_thumbnail(); ?>
+	<?php
+	the_content();
 
-	<div>
-		<?php
-		the_content();
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'desk-dog-development' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
+	wp_link_pages( array(
+		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'desk-dog-development' ),
+		'after'  => '</div>',
+	) );
+	?>
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
